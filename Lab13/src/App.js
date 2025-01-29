@@ -71,10 +71,24 @@
  */
 
 /* -- ALL YOUR COMPONENT/STYLE IMPORTS HERE -- */
-import './App.css'
+import "./App.css";
+import Nav from "./Nav";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return <div className="App"></div>
+
+
+let date = new Date()
+
+let singleUser = {
+  name: 'John',
+  time: date.toDateString(),
 }
 
-export default App
+
+function App() {
+  return <div className="App">
+    <Nav singleUser={singleUser} />
+  </div>;
+}
+
+export default App;
