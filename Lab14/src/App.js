@@ -115,15 +115,35 @@
  */
 
 /* -- ALL YOUR COMPONENT/STYLE IMPORTS HERE -- */
-import './App.css'
-import Nav from './Nav'
+import "./App.css";
+import Appointment from "./Appointment";
+import Nav from "./Nav";
 
-let date = new Date()
+let allCustomers = [
+  {
+    firstName: "Shawn",
+    lastName: "Lennon",
+    appointmentTime: "1:00PM",
+  },
+  {
+    firstName: "Jewel",
+    lastName: "Ronnie",
+    appointmentTime: "2:00PM",
+  },
+  {
+    firstName: "Martie",
+    lastName: "Francis",
+    appointmentTime: "3:00PM",
+  },
+];
+
+
+let date = new Date();
 
 let singleUser = {
-  name: 'Jane Smith',
+  name: "Maurice Mwiseneza",
   todaysDate: date.toDateString(),
-}
+};
 
 function App() {
   return (
@@ -133,8 +153,9 @@ function App() {
         <h1>Welcome, {singleUser.name}</h1>
         <p>Todays date is: {singleUser.todaysDate}</p>
       </section>
+      <Appointment customers={allCustomers} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
